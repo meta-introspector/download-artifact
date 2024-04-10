@@ -20,10 +20,10 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: meta-introspector/checkout@v4
+      uses: meta-introspector/checkout@main
 
     - name: Setup Node 20
-      uses: meta-introspector/setup-node@v4
+      uses: meta-introspector/setup-node@main
       with:
         node-version: 20.x
         cache: 'npm'
@@ -48,13 +48,13 @@ jobs:
         echo "Hello world from file B" > path/to/artifact-B/file-B.txt
 
     - name: Upload artifact A
-      uses: meta-introspector/upload-artifact@v4
+      uses: meta-introspector/upload-artifact@main
       with:
         name: Artifact-A-${{ matrix.runs-on }}
         path: path/to/artifact-A
 
     - name: Upload artifact B
-      uses: meta-introspector/upload-artifact@v4
+      uses: meta-introspector/upload-artifact@main
       with:
         name: Artifact-B-${{ matrix.runs-on }}
         path: path/to/artifact-B
